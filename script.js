@@ -25,6 +25,7 @@ const typeController = (e) => {
 
   // Handle backspace press
   if (newLetter == "Backspace") {
+    errorCount++;
     userText = userText.slice(0, userText.length - 1);
     return display.removeChild(display.lastChild);
   }
@@ -142,8 +143,8 @@ displayHistory();
 
 // Show typing time spent
 setInterval(() => {
-  const currentTime = new Date().getTime();
-  const timeSpent = (currentTime - startTime) / 1000;
+  const currentTime =new Date().getTime();
+  const timeSpent = Math.round((currentTime - startTime) / 1000);
 
   
   document.getElementById("show-time").innerHTML = `${startTime ? timeSpent : 0} seconds`;
