@@ -142,8 +142,9 @@ button {
 }
 
 #histories {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
   justify-content: space-around;
 }
 
@@ -200,5 +201,15 @@ button {
   }
   .card {
     flex-direction: column;
+  }
+  #histories {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px;
+  }
+
+  #question {
+    padding: 25px;
+    height: 170px;
   }
 }
